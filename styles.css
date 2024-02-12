@@ -10,7 +10,7 @@ body {
   margin-top: 20px;
 }
 #createNoteBtn {
-  background-color: #70002e;
+  background-color: black;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -24,7 +24,7 @@ body {
   background-color: black;
 }
 .sticky-note {
-  background-color: #70002e;
+  background-color: black;
   width: 200px;
   padding: 15px;
   margin: 10px;
@@ -59,7 +59,7 @@ body {
 
 .sticky-note .delete-btn {
   position: absolute;
-  color: darkred;
+  color: black;
   top: 5px;
   right: 5px;
   cursor: pointer;
