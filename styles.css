@@ -10,7 +10,7 @@ body {
   margin-top: 20px;
 }
 #createNoteBtn {
-  background-color: black;
+  background-color: #70002e;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -24,7 +24,7 @@ body {
   background-color: black;
 }
 .sticky-note {
-  background-color: black;
+  background-color: #70002e;
   width: 200px;
   padding: 15px;
   margin: 10px;
@@ -33,11 +33,29 @@ body {
   position: relative;
 }
 
+.sticky-note textarea {
+  border: none;
+  width: 100%;
+  height: 160%;
+  resize: none;
+  font-size: 14px;
+  outline: none;
+}
+
 .note-title {
   width: 100%;
   margin-bottom: 5px;
   font-size: 16px;
   font-weight: bold;
+}
+
+.sticky-note textarea {
+  border: none;
+  flex: 1;
+  width: 100%;
+  resize: none;
+  font-size: 14px;
+  outline: none;
 }
 
 .note-deadline {
@@ -50,8 +68,6 @@ body {
   border: none;
   flex: 1;
   width: 100%;
-  height: 160%;
-
   resize: none;
   font-size: 14px;
   outline: none;
@@ -59,7 +75,7 @@ body {
 
 .sticky-note .delete-btn {
   position: absolute;
-  color: black;
+  color: darkred;
   top: 5px;
   right: 5px;
   cursor: pointer;
