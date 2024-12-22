@@ -9,6 +9,7 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
 #createNoteBtn {
   background-color: #70002e;
   color: white;
@@ -23,6 +24,7 @@ body {
 #createNoteBtn:hover {
   background-color: black;
 }
+
 .sticky-note {
   background-color: #70002e;
   width: 200px;
@@ -49,44 +51,67 @@ body {
   font-weight: bold;
 }
 
-.sticky-note textarea {
-  border: none;
-  flex: 1;
-  width: 100%;
-  resize: none;
-  font-size: 14px;
-  outline: none;
-}
-
 .note-deadline {
   width: 100%;
   margin-bottom: 5px;
   font-size: 14px;
 }
 
-.sticky-note textarea {
-  border: none;
-  flex: 1;
-  width: 100%;
-  resize: none;
-  font-size: 14px;
-  outline: none;
-}
-
 .sticky-note .delete-btn {
   position: absolute;
-  color: darkred;
-  top: 5px;
-  right: 5px;
+  top: 2px; /* Positioned slightly closer to the top */
+  right: 2px; /* Positioned slightly closer to the right */
   cursor: pointer;
-  font-size: 14px;
-  background: none;
-  border: none;
-  padding: 0;
-  color: #777;
-  transition: color 0.3s ease-in-out;
+  font-size: 10px; /* Reduced font size for a smaller 'X' */
+  background-color: maroon; /* Distinctive red background color */
+  color: white !important; /* White text color for contrast */
+  border: 2px solid white; /* White border */
+  padding: 2px; /* Reduced padding for a smaller button */
+  border-radius: 50%; /* Ensures a fully circular shape */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  width: 20px; /* Reduced width for a smaller circular size */
+  height: 20px; /* Reduced height for a smaller circular size */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center align the 'X' */
 }
 
 .sticky-note .delete-btn:hover {
-  color: black;
+  background-color: #e60000; /* Darker red for hover effect */
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticky-note {
+    width: 90%; /* Adjust sticky-note width for smaller screens */
+    margin: 10px 0;
+  }
+
+  #createNoteBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .sticky-note textarea {
+    font-size: 12px;
+    height: 120%; /* Adjust height for better fit on small screens */
+  }
+
+  .note-title {
+    font-size: 14px;
+  }
+
+  .note-deadline {
+    font-size: 12px;
+  }
+
+  .sticky-note .delete-btn {
+    font-size: 12px;
+  }
 }
