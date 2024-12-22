@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   loadStickyNotes();
+  checkDeadlines(); // Start checking deadlines periodically
 
   function createStickyNote() {
     const note = document.createElement("div");
@@ -99,5 +100,27 @@ document.addEventListener("DOMContentLoaded", function () {
     note.appendChild(textarea);
     note.appendChild(deleteBtn);
     container.appendChild(note);
+  }
+
+  function checkDeadlines() {
+    const reminderSound = new Audio("notification-9-158194.mp3"); // Replace with your sound file
+
+    setInterval(() => {
+      const notes = JSON.parse(localStorage.getItem("stickyNotes")) || [];
+      const now = new Date();
+
+      notes.forEach((note, index) => {
+        if (note.deadline && new Date(note.deadline) <= now) {
+          reminderSound.play();
+          alert(`Reminder: ${note.title || "Untitled Task"} is due!`);
+
+          // Optionally, remove the note after triggering
+          notes.splice(index, 1);
+          localStorage.setItem("stickyNotes", JSON.stringify(notes));
+        }
+      });
+
+      loadStickyNotes(); // Reload notes to reflect changes
+    }, 1000 * 60); // Check every minute
   }
 });
